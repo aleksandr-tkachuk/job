@@ -13,21 +13,12 @@ class DetailsController {
     function booksAction(){
         
     }
-
-    function detailAction() {
-        $booksModel = new BooksModel();
-        $row = $booksModel->getDetails($this->params[0]);
-
-
-        $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
-
-
+    
+    function sandmailAction() {
         $firstnameErrText = "";
         $lastnameErrText = "";
         $addressErrText = "";
         $exemplarsErrText = "";
-        if (isset($_POST["filled"])) {
-
             if (empty($_POST['firstname'])) {
                 $firstnameErrText = "не ввели имя!";
             }
@@ -60,8 +51,13 @@ class DetailsController {
                     $sendaddressErr = true;
                 }
             }
-        }
-
+        include_once 'views/sendmail.tpl';
+    }
+    
+    function detailAction() {
+        $booksModel = new BooksModel();
+        $row = $booksModel->getDetails($this->params[0]);
+        $firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
         include_once 'views/detail.tpl';
     }
 

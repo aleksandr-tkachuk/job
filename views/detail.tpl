@@ -51,19 +51,5 @@
             <input type='submit'>
             <input type='hidden' name='filled'>
         </form>
-
-
-
-        <?php if (isset($_POST["filled"])): ?>
-            <?php if (!$sendaddressErr): ?>
-                <font color="green"><h1>Спасибо!<br />Ваш заказ оформлен.</h1></font></body></html>';
-        <form action = userMain.php method = "post">
-            <input type = submit value = "НАЗАД">
-        </form>
-    <?php else: ?>
-        <font color="red">Ваш заказ не оформлен! идите на хуй</font>
-    <?php endif ?>
-<?php endif ?>
-<br><br>
 </body>
 </html>

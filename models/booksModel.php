@@ -26,6 +26,7 @@ class BooksModel extends AbstractModel {
     }
 
     public function getDetails($id) {
+        $id = (int)$id;
         $query = "SELECT BookName,BookAbstract,BookPrice,BookNumb,BookYear,BookPages,FIO,PublishingName 
 	FROM books,authors,publishings WHERE BookID='$id'";
         $result = mysql_query($query);

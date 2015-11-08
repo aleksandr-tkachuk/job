@@ -1,0 +1,19 @@
+# установка кодировки сервера
+AddDefaultCharset utf-8
+
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+
+<Files "admin.php">
+Authtype Basic
+AuthName " "
+AuthUserFile /home/localhost/www/3/.htpasswd
+Require valid-user
+</Files>

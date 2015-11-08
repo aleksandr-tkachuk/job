@@ -1,0 +1,20 @@
+body {
+	background: #E8E8E8;
+}
+.err {
+	color: red;
+}
+.user{
+	color: ##202020;
+	display: inline-block;
+	width: 12%;
+}
+h2 {
+	color: ##202020;
+}
+
+td{
+	border: 1px solid #808080;
+	background: #fc3;
+    padding: 10px;
+}
